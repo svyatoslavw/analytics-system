@@ -1,6 +1,5 @@
 FROM node:20-alpine
 
-# Создаем непривилегированного пользователя
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 
@@ -8,16 +7,12 @@ USER nodejs
 
 WORKDIR /app
 
-# Копируем файлы зависимостей
 COPY --chown=nodejs:nodejs package.json yarn.lock* ./
 
-# Устанавливаем зависимости (включая dev)
 RUN yarn install
 
-# Копируем исходники
 COPY --chown=nodejs:nodejs . .
 
 EXPOSE 4000
 
-# Запускаем в режиме разработки
 CMD ["yarn", "dev"]
