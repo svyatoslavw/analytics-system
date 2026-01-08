@@ -1,0 +1,16 @@
+{
+  "name": "analytics-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docker:up": "docker compose -f ./docker-compose.dev.yml up -w --build",
+    "docker:down": "docker compose -f ./docker-compose.dev.yml down"
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

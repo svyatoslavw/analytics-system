@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsup src/main.ts --watch --onSuccess='node dist/main.js' | pino-pretty --colorize",
+    "build": "tsup src/main.ts --minify",
+    "start": "node dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cli-color": "^2.0.4",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "ioredis": "^5.9.1",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/cli-color": "^2.0.6",
+    "@types/node": "^24.1.0",
+    "pino-pretty": "^13.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}

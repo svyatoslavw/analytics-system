@@ -1,0 +1,9 @@
+node_modules
+.git
+.env
+.vscode
+test
+*.log
+coverage
+Dockerfile*
+docker-compose*
