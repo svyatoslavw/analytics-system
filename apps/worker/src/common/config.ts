@@ -7,6 +7,7 @@ interface AppConfig {
   consumerGroup: string
   consumerName: string
   batchSize: number
+  dlqStreamName: string
   pollInterval: number
   maxRetries: number
   healthCheckPort?: number
@@ -18,6 +19,7 @@ export const config: AppConfig = {
   streamName: process.env.STREAM_NAME || "events_stream",
   consumerGroup: process.env.CONSUMER_GROUP || "worker_group",
   consumerName: process.env.WORKER_NAME || os.hostname(),
+  dlqStreamName: process.env.DLQ_STREAM_NAME || "events_dlq_stream",
   batchSize: parseInt(process.env.BATCH_SIZE || "100"),
   pollInterval: parseInt(process.env.POLL_INTERVAL || "1000"),
   maxRetries: parseInt(process.env.MAX_RETRIES || "3"),

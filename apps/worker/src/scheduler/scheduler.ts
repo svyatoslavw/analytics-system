@@ -1,7 +1,8 @@
+import { logger } from "@/common/logger"
 import { schedule, type ScheduledTask } from "node-cron"
-import { logger } from "./logger"
+import { IScheduler } from "./scheduler.interface"
 
-export class Scheduler {
+export class Scheduler implements IScheduler {
   private tasks: Map<string, NodeJS.Timeout> = new Map()
   private cronJobs: Map<string, ScheduledTask> = new Map()
 

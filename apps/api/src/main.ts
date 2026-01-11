@@ -12,6 +12,7 @@ const server = Fastify({
 })
 
 server.get("/", (request, reply) => {
+  console.log(process.env.REDIS_URL)
   reply.send({ hello: "world" })
 })
 
